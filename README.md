@@ -1,4 +1,4 @@
-#Etch-a-Sketch
+# Etch-a-Sketch
 
 This is something between a sketchpad and an Etch-a-Sketch.
 
