@@ -1,0 +1,24 @@
+.grid-container{
+    display:flex;
+    flex-direction: column;
+    height: 50vh;
+    width: 50vh;
+    border: 2px solid grey;
+}
+
+.grid-row{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.grid-cell{
+    flex: 1;
+    background-color: white;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+}
+
+.grid-cell-hover{
+    background-color: gray;
+}
