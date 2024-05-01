@@ -24,19 +24,19 @@ createGrid(64,64);
 changeResolutionBtn.addEventListener("click", () => {
     let resolution = Number(prompt("Enter Resolution"));
 
-    if (resolution < 128){
-    if (typeof(resolution) === "number"){
-        while (gridContainer.firstChild){
-            gridContainer.firstChild.remove();
+    if (!isNaN(resolution)){
+        if (resolution < 128){
+            while (gridContainer.firstChild){
+                gridContainer.firstChild.remove();
+            }
+            createGrid(resolution, resolution);
+            console.log(typeof(resolution));
         }
-        createGrid(resolution, resolution);
-        console.log(typeof(resolution));
+        else{
+            alert("Error: Max Resolution is 128")
+        }
     }
     else{
-        alert("Please enter a number")
-    }
-    }
-    else{
-        alert("Max Resolution is 128")
+        alert("Error: Resolution has to be a Number.")
     }
 })
