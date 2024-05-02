@@ -1,6 +1,15 @@
 const gridContainer = document.querySelector(".grid-container");
 const changeResolutionBtn = document.querySelector(".changeResolutionBtn");
 
+function getRandomRGBColor(){
+    let redValue = Math.floor(Math.random() * 256);
+    let greenValue = Math.floor(Math.random() * 256);
+    let blueValue = Math.floor(Math.random() * 256);
+
+    return `rgb(${redValue},${greenValue}, ${blueValue})`;
+
+}
+
 function createGrid(resolutionX, resolutionY){
     for (let i = 0; i < resolutionY; i++){
         const gridRow = document.createElement("div");
@@ -11,7 +20,7 @@ function createGrid(resolutionX, resolutionY){
             gridCell.classList.add("grid-cell");
             gridRow.appendChild(gridCell)
             gridCell.addEventListener("mouseover", function(hover) {
-                hover.target.classList.add("grid-cell-hover");
+                hover.target.style.backgroundColor = getRandomRGBColor();
             })
         }
         gridContainer.appendChild(gridRow);
@@ -25,7 +34,7 @@ changeResolutionBtn.addEventListener("click", () => {
     let resolution = Number(prompt("Enter Resolution"));
 
     if (!isNaN(resolution)){
-        if (resolution < 128){
+        if (resolution <= 128){
             while (gridContainer.firstChild){
                 gridContainer.firstChild.remove();
             }
